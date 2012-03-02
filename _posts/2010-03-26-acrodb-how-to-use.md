@@ -7,7 +7,7 @@ tags: [AcroDB, Acropolium, C#, DB, Linq, Subsonic]
 {% include JB/setup %}
 {% assign gist_id = 1960303 %}
 
-Hi, all! Almost a week have passed, after I have <a href="/2010/3/20/acrodb-the-beginning.html">posted</a> my new flexible provider article. Maybe, nobody commented it, because of article compicity... So, today I will try to show you, how to use <a class="offsite-link-inline" title="Download Library from Github" href="http://github.com/ioleksiy/AcroDB" target="_blank">AcroDb</a>.
+Hi, all! Almost a week have passed, after I have <a href="/2010/03/20/acrodb-the-beginning/">posted</a> my new flexible provider article. Maybe, nobody commented it, because of article compicity... So, today I will try to show you, how to use <a class="offsite-link-inline" title="Download Library from Github" href="http://github.com/ioleksiy/AcroDB" target="_blank">AcroDb</a>.
 
 ## The model
 
@@ -31,7 +31,7 @@ Now let me describe, how this entity will look like in code using AcroDb library
 {% assign gist_file = "01.cs" %}
 {% include gist.html %}
 
-And if you have setup AcroDataContext class settings correctly as it was described in <a href="http://oleksiy.pro/2010/03/20/acrodb-the-beginning/">first post</a>, after application start you will have a "Car" table in your database/no-relational system. Or if you will change properties of this interface, table schema will be updated, thanks to SubSonic.
+And if you have setup AcroDataContext class settings correctly as it was described in <a href="/2010/03/20/acrodb-the-beginning/">first post</a>, after application start you will have a "Car" table in your database/no-relational system. Or if you will change properties of this interface, table schema will be updated, thanks to SubSonic.
 
 So, AcroColumnStringLength attribute is used to specify the maximum length of the column in db. The AcroColumnStringLong attribute marks te column as infinite (MAX) size. For all column attributes, please, read <a class="offsite-link-inline" title="Column attributes" href="http://github.com/ioleksiy/AcroDB/blob/master/AcroDB/Attributes/ColumnAttributes.cs" target="_blank">here</a>.
 
