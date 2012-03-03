@@ -7,7 +7,7 @@ tags: [AcroDB, Acropolium, C#, DB, Linq, Subsonic]
 {% include JB/setup %}
 {% assign gist_id = 1960303 %}
 
-Hi, all! Almost a week have passed, after I have <a href="/2010/03/20/acrodb-the-beginning/">posted</a> my new flexible provider article. Maybe, nobody commented it, because of article compicity... So, today I will try to show you, how to use <a class="offsite-link-inline" title="Download Library from Github" href="http://github.com/ioleksiy/AcroDB" target="_blank">AcroDb</a>.
+Hi, all! Almost a week have passed, after I have [posted][1] my new flexible provider article. Maybe, nobody commented it, because of article compicity... So, today I will try to show you, how to use [AcroDb][2].
 
 ## The model
 
@@ -17,23 +17,21 @@ Usually, when you start to design your future application, you need to describe 
 
 What fields should this entity have? Let them be:
 
-<ul>
-<li>ID - the unique <a class="offsite-link-inline" title="GUID" href="http://msdn.microsoft.com/en-us/library/system.guid.aspx" target="_blank">guid</a> of car record (primary key).</li>
-<li>Name - car name string (if we need to specify the limit of this field, let it be maximum 80 chars).</li>
-<li>YearOfAssembly - the year, when this car starts to drive (integer value).</li>
-<li>Description - the text with notes about the car (infinite string).</li>
-</ul>
+* `ID` - the unique [Guid][3] of car record (primary key).
+* `Name` - car name string (if we need to specify the limit of this field, let it be maximum 80 chars).
+* `YearOfAssembly` - the year, when this car starts to drive (integer value).
+* `Description` - the text with notes about the car (infinite string).
 
 ### Car entity prototype in AcroDb
 
-Now let me describe, how this entity will look like in code using AcroDb library.
+Now let me describe, how this entity will look like in code using `AcroDb` library.
 
 {% assign gist_file = "01.cs" %}
 {% include gist.html %}
 
-And if you have setup AcroDataContext class settings correctly as it was described in <a href="/2010/03/20/acrodb-the-beginning/">first post</a>, after application start you will have a "Car" table in your database/no-relational system. Or if you will change properties of this interface, table schema will be updated, thanks to SubSonic.
+And if you have setup `AcroDataContext` class settings correctly as it was described in [first post][1], after application start you will have a `Car` table in your database/no-relational system. Or if you will change properties of this interface, table schema will be updated, thanks to `SubSonic`.
 
-So, AcroColumnStringLength attribute is used to specify the maximum length of the column in db. The AcroColumnStringLong attribute marks te column as infinite (MAX) size. For all column attributes, please, read <a class="offsite-link-inline" title="Column attributes" href="http://github.com/ioleksiy/AcroDB/blob/master/AcroDB/Attributes/ColumnAttributes.cs" target="_blank">here</a>.
+So, `AcroColumnStringLength` attribute is used to specify the maximum length of the column in db. The `AcroColumnStringLong` attribute marks te column as infinite (MAX) size. For all column attributes, please, read [here][4].
 
 ## Working with entity
 
@@ -56,7 +54,7 @@ Almost the same example for single object and count function:
 {% assign gist_file = "04.cs" %}
 {% include gist.html %}
 
-As you can see, here you can use usual Linq methods applying to the Query property, as Query property is IQueryabe type.
+As you can see, here you can use usual Linq methods applying to the `Query` property, as `Query` property is `IQueryabe` type.
 
 ### Updating and deleting an entity
 
@@ -65,8 +63,13 @@ As you can see, here you can use usual Linq methods applying to the Query proper
 
 ## The end for today
 
-As you can see, I have tried to save the simplicity in working with objects as in Linq2Sql, but have added a multi-context support for it, so you are not limited only for MS SQL...
+As you can see, I have tried to save the simplicity in working with objects as in `Linq2Sql`, but have added a multi-context support for it, so you are not limited only for MS SQL...
 
 Also, you don't need to work with db directly. All tables/objects will be created for you automatically.
 
-If you have any comments/proposals please, write them in comment form. Next time I plan to describe, how to use simple business logic layer with AcroDb and relations between entities.
+If you have any comments/proposals please, write them in comment form. Next time I plan to describe, how to use simple business logic layer with `AcroDb` and relations between entities.
+
+[1]: /2010/03/20/acrodb-the-beginning/                                                     "AcroDB. The beginning"
+[2]: http://github.com/ioleksiy/AcroDB                                                     "Fork it on Github"
+[3]: http://msdn.microsoft.com/en-us/library/system.guid.aspx                              "Guid at MSDN"
+[4]: http://github.com/ioleksiy/AcroDB/blob/master/AcroDB/Attributes/ColumnAttributes.cs   "Column attributes"

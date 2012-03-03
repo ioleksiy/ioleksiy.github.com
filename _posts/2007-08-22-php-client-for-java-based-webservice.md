@@ -21,11 +21,11 @@ After developing all webservices that our company needed we have tested them wit
 
 The next task was to make PHP client to Java service. After some search in Google, have found that new version of PHP (version 5.0+) supports the SOAP connection as a client and as a server. Also, have found, that for the PHP version that is younger than 5th there was a library called NuSOAP (please, notice that this lib is not working with new versions of PHP).
 
-So, I have made an instance of SoapClient class in PHP and give it a WSDL URL as parameter. Than have tried to make some remote call… Here the problem appears. The failure was with remote call parameters, just because Java webservice framework (JAXb, JAXr) converts simple collection of parameters to the one object with variables that are real parameters. Also, all argument names are renamed to the template “argX”, where “X” is a number of argument starting from 0.
+So, I have made an instance of SoapClient class in PHP and give it a WSDL URL as parameter. Than have tried to make some remote call... Here the problem appears. The failure was with remote call parameters, just because Java webservice framework (JAXb, JAXr) converts simple collection of parameters to the one object with variables that are real parameters. Also, all argument names are renamed to the template `argX`, where `X` is a number of argument starting from 0.
 
-Also, there left some problem with passing “null” value to remote call.
+Also, there left some problem with passing `null` value to remote call.
 
-For example, we have remote call “Login” and it receives two parameters – username & password. So, the stub in PHP will be:
+For example, we have remote call to `Login` method and it receives two parameters – username & password. So, the stub in PHP will be:
 
 {% assign gist_file = "01.php" %}
 {% include gist.html %}
@@ -37,7 +37,7 @@ In PHP code the remote call will be like this:
 
 Do you see how nice it is?
 
-Now, try to imagine, that this is only one remote call, and what will be if there are about 100 such calls? You will need 100 different stubs. Also, please, notice what will be the difference between these stubs. Let’s show one more example of more complicated call (“RegisterUser”). Let’s imagine that there are such parameters – username, password, email, full name.
+Now, try to imagine, that this is only one remote call, and what will be if there are about 100 such calls? You will need 100 different stubs. Also, please, notice what will be the difference between these stubs. Let’s show one more example of more complicated call (`RegisterUser`). Let’s imagine that there are such parameters – username, password, email, full name.
 
 So, the stub will be:
 
@@ -59,7 +59,7 @@ The example of call is here (for login stub):
 {% assign gist_file = "06.php" %}
 {% include gist.html %}
 
-That’s all. And the object will be filled with all needed “argX”.
+That’s all. And the object will be filled with all needed `argX`.
 
 Now, let’s unify the SoapClient class. All we need is to catch the call of external method with all parameters and dynamically create the stub and generate the remote call. Here is the code sample (please, note that here there is add-on information stored about logged in user session ID for future remote calls without passing this ID to the parameter list by developer):
 

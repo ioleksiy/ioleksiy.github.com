@@ -8,6 +8,9 @@ html, body {
 .navbar-inner {
   border-radius: 0;
 }
+.gist-data {
+  border-bottom:0 !important;
+}
 .container > footer {
   margin-top: 20px;
 }
