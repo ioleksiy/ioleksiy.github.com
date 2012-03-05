@@ -16,7 +16,7 @@ Lately, some new interesting web-development frameworks appeared based on mvc co
 
 ## NancyFX and MiniProfiler
 
-On some stage of coding with `NancyFX`, I've got a need to measure the performance of it. THere were no doubts, that `MvcMiniProfiler` will do the job. As I have not found a working solution for this, I'm posting it here.
+On some stage of coding with `NancyFX`, I've got a need to measure the performance of it. There were no doubts, that `MvcMiniProfiler` will do the job. As I have not found a working solution for this, I'm posting it here.
 
 All you need to do, is create a custom bootstrap for `NancyFX`. How to make it, please read [here][5].
 
@@ -27,7 +27,7 @@ Than you have to override some methods of custom bootstrap, so the profiler will
 
 MvcMiniProfiler is describing how to inject the header into template and how to run tests very good on their site, so I am not touching this theme.
 
-The example of profiler usage is:
+The example of profiler usage:
 
 {% assign gist_file = "02.cs" %}
 {% include gist.html %}
