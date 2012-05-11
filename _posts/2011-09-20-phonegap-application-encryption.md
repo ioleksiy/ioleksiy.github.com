@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: PhoneGap Application Encryption
+title: PhoneGap (newely Cordova) Application Encryption
 tagline: hobby
 tags: [encryption, html, ios, javascript, phonegap, security]
 ---
