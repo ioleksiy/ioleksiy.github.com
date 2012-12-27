@@ -7,6 +7,8 @@ tags: [encryption, html, ios, javascript, phonegap, security]
 {% include JB/setup %}
 {% assign gist_id = 1960145 %}
 
+**This article is deprecated, please read the fresh one** [here][3].
+
 This time I am writing about PhoneGap Application security.
 
 It happened that I was involved into a simple iPhoneApp development. The reason, why we have selected PhoneGap is simple - nobody knows Objective C. So, during a month team was developing an iPhone application with PhoneGap API. And when we have got a first compilable and functional sample, it occurs, that "app" file could be unpacked as zip archive, and all our javascript is visible and readable.
@@ -58,3 +60,4 @@ At the end, maybe you will need a method to encrypt your html file. I have it on
 
 [1]: http://utf-8.jp/public/jjencode.html          "JJEncode"
 [2]: https://github.com/ioleksiy/phonegap-iphone   "PhoneGap iPhone"
+[3]: /2012/12/27/cordova-ios-security/             "Cordova (PhoneGap) iOS Security"
